@@ -1,0 +1,373 @@
+/* *{
+    outline: 1px red solid;
+} */
+body {
+    margin: 0;
+    /* background-color: #eeeeee; */
+    color: #111111!important;
+}
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+}
+.spacer {
+    flex: 1; 
+}
+.logo {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #111111!important;
+}
+a {
+    font-size: 1.8rem;
+    color: #111111!important;
+}
+.fa  {
+    font-size: 2.2rem;
+    color: #111111!important;
+}
+a:hover, .fa:hover {
+    color: #777777!important;
+}
+
+/* header section */
+header {
+    height: 50vh;
+    /* max-height: 75vh; */
+    background: url('../images/main/mainPic1.jpg') no-repeat top center;
+    background-size: cover;
+}
+
+/* main section */
+main {
+    display: block;
+    flex: 0 1 auto;
+}
+#portfolio-links a:nth-child(1) {
+    height: 30vh;
+    /* max-height: 50vh; */
+    background: url('../images/portfolio/commercial/unspecified_s600x400.jpg') no-repeat top;
+    background-size: cover;
+}
+#portfolio-links a:nth-child(2) {
+    height: 30vh;
+    background: url('../images/portfolio/bridal/Rachel_600x800.jpg') no-repeat top;
+    background-size: cover;
+}
+
+/* Utilites */
+.text-light {
+    color: #eeeeee!important;
+}
+.text-lighter {
+    color: #999999!important;
+}
+.text-dark {
+    color: #111111!important;
+}
+.img-shadow {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(30deg, black 1%, transparent 75%);
+}
+.preload * {
+    transition: none !important;
+}
+.header__button {
+    /* width: var(--header-height); */
+    /* width: 2rem; */
+    /* flex-shrink: 0; */
+    /* height: 2rem; */
+    background: none!important;
+    outline: none;
+    border: none;
+    color: #111111!important;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.header__button:hover{
+    color: #777!important;
+    background: #ffffff!important;
+}
+
+.nav__links {
+    position: fixed;
+    /* top: 0; */
+    right: 0;
+    z-index: 2;
+    height: 100vh;
+    width: 250px;
+    background: #ffffff;
+    transform: translateX(250px);
+    transition: transform 0.3s;
+}
+
+.nav--open .nav__links {
+    transform: translateX(0);
+    box-shadow: 0 0 15px #00000033;
+}
+
+.nav__link {
+    /* display: flex; */
+    /* align-items: center; */
+    /* height: 3rem; */
+    color: #111111!important;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    /* background: transform 0.2s; */
+}
+
+/* .nav__link > i {
+    margin-right: 15px;
+} */
+
+.nav__link--active {
+    color: #777777!important;
+}
+
+.nav__link--active,
+.nav__link:hover {
+    color: #777777;
+}
+
+.nav__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000000a1;
+    /* backdrop-filter: blur(2px); */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.nav--open .nav__overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+.img-c {
+    height: 30rem;
+    width: 30rem;
+}
+.img-o {
+    object-position: top;
+    object-fit: cover;
+}
+
+.img-ctr {
+    object-position: center;
+    object-fit: cover;
+}
+
+.img-r {
+    object-position: right;
+    object-fit: cover;
+}
+
+
+.img-p {
+    height: 80%;
+    width: auto;
+}
+
+.img-l {
+    height: auto;
+    width: 80%;
+}
+
+.li-indent {
+    text-indent: -1.5rem;
+}
+
+/* LIGHTBOX */
+
+.lightbox {
+    /** Default lightbox to hidden */
+    /* display: none; */
+    visibility: hidden;
+    /** Position and style */
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    /* text-align: center; */
+    top: 0;
+    left: 0;
+    background: #000000e6;
+    /* display: flex;
+    flex-direction: column; */
+    transition: transform 0.3s;
+}
+
+.lightbox img {
+    /* * Pad the lightbox image */
+    max-width: 90%;
+    max-height: 80%;
+    /* margin-top: 2%;  */
+    /* margin: 0 auto!important; */
+}
+
+.lightbox:target {
+    /** Remove default browser outline */
+    outline: none;
+
+    /** Unhide lightbox **/
+    /* display: block; */
+    visibility: visible;
+}
+
+
+/* Bootstrap 3 - Modal */
+
+.modal-open {
+    overflow: hidden
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0
+}
+
+.modal.fade .modal-dialog {
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    transition: transform .3s ease-out;
+    -webkit-transform: translate(0, -25%);
+    -ms-transform: translate(0, -25%);
+    -o-transform: translate(0, -25%);
+    transform: translate(0, -25%)
+}
+
+.modal.in .modal-dialog {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0)
+}
+
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto
+}
+
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, .5)
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000
+}
+
+.modal-backdrop.fade {
+    filter: alpha(opacity=0);
+    opacity: 0
+}
+
+.modal-backdrop.in {
+    filter: alpha(opacity=50);
+    opacity: .5
+}
+
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5
+}
+
+.modal-header .close {
+    margin-top: -2px
+}
+
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143
+}
+
+.modal-body {
+    position: relative;
+    padding: 15px
+}
+
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5
+}
+
+.modal-footer .btn+.btn {
+    margin-bottom: 0;
+    margin-left: 5px
+}
+
+.modal-footer .btn-group .btn+.btn {
+    margin-left: -1px
+}
+
+.modal-footer .btn-block+.btn-block {
+    margin-left: 0
+}
+
+.modal-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll
+}
+
+@media (min-width:768px) {
+    .modal-dialog {
+        width: 600px;
+        margin: 30px auto
+    }
+    .modal-content {
+        -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5)
+    }
+    .modal-sm {
+        width: 300px
+    }
+}
+
+@media (min-width:992px) {
+    .modal-lg {
+        width: 900px
+    }
+}
+
